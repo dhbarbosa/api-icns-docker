@@ -1,4 +1,4 @@
 data
 config/api.env
 config/postgresql.env
-app/
+docker/app/

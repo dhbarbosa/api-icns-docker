@@ -1,9 +1,7 @@
 FROM openjdk:17-jdk
 
 WORKDIR /app
-# Copiar o arquivo JAR para a imagem
-COPY ../app/api-0.0.1-SNAPSHOT.jar /app/myapp.jar
-
+COPY ./app/api-0.0.1-SNAPSHOT.jar /app/myapp.jar
 EXPOSE 8080
 
 # Executar o JAR
