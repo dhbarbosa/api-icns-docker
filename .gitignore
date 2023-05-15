@@ -1,3 +1,4 @@
 data
-config/*
-app/*
+config/api.env
+config/postgresql.env
+app/
