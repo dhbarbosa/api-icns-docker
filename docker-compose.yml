@@ -1,0 +1,38 @@
+version: '3'
+services:
+  postgresql:
+    image: diogohbarbosa/postgresql-icns:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    env_file:
+      - ./config/postgresql.env
+    
+    networks:
+      network-app:
+        ipv4_address: 172.16.0.2
+
+
+  java_app:
+    image: diogohbarbosa/api-icns:latest 
+  
+    env_file:
+      - ./config/api.env
+
+    networks:
+      network-app:
+        ipv4_address: 172.16.0.3
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgresql
+  
+networks:
+  network-app:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/16
+

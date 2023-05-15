@@ -1,0 +1,9 @@
+# Use a base image
+FROM postgres:latest
+
+COPY /postgres/config/postgrsql.conf /etc/postgresql/postgresql.conf
+COPY /postgres/config/pg_hba.conf /etc/postgresql/pg_hba.conf
+
+EXPOSE 5432
+
+CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
