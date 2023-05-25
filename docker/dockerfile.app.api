@@ -4,5 +4,4 @@ WORKDIR /app
 COPY ./app/api-0.0.1-SNAPSHOT.jar /app/myapp.jar
 EXPOSE 8080
 
-# Executar o JAR
-CMD ["java", "-jar", "/app/myapp.jar"]
+CMD ["sh", "-c", "sleep 10; java -jar /app/myapp.jar"]
