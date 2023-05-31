@@ -1,6 +1,6 @@
 # Configuraçao do Docker | ICNS-API | Fatec de Cotia 2023
 
-## Infomaçãoes
+## Infomações
 
 A Criação de desse projeto tem como intuito o aprendizado e desenvolvimento de um API feita em Java/Spring, ultizando ferramentas/bibliotecas como Docker, JWT, Bcrypt, Postgresql e outros.
 
