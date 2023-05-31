@@ -4,3 +4,5 @@ COPY ./postgresql/config/postgrsql.conf /etc/postgresql/postgresql.conf
 COPY ./postgresql/config/pg_hba.conf /etc/postgresql/pg_hba.conf
 
 CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+
+EXPOSE 5432
