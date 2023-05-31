@@ -1,2 +1,50 @@
-# Docker file ICNS
+# Configuraçao do Docker | ICNS-API | Fatec de Cotia | 2023
 
+## Infomação
+
+A Criação de desse projeto tem como intuito o aprendizado e desenvolvimento de um API feita em Java/Spring, ultizando ferramentas/bibliotecas como Docker, JWT, Bcrypt, Postgresql e outros.
+
+### Ambiente
+
+Para isso devemos ter nossa máquina instalado docker e pgAdmin
+
+### Modo de Exec.
+
+-   Clonando o repositorio.
+
+```bash
+git clone https://github.com/diogoHenBarbosa/api-icns-docker docker-api
+```
+
+-   Indo para o diretorio.
+
+```bash
+cd docker-api
+```
+
+-   Configure as váriaveis de ámbiente.
+
+```bash
+cd config
+```
+
+-   Altere e renomei o arquivo api.env.exemplo para api.env.
+
+```bash
+  POSTGRES_USER=**
+  POSTGRES_DB=**
+  USER_ADMIN=**
+  PASSWORD_ADMIN=**
+  POSTGRES_PASSWORD=**
+  API_SECRET=**
+  API_ISSUER=**
+  PORT=5432
+  IP_BD=172.16.0.2
+```
+
+-   Na pasta principal, suba as máquinas
+
+```bash
+docker-compose up
+
+```
