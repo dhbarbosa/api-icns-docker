@@ -22,8 +22,23 @@ services:
       network-app:
         ipv4_address: 172.16.0.3
     ports:
-      - 8080:8080
+      - 7070:8080
     depends_on:
+      - postgresql
+
+  icns:
+    image: diogohbarbosa/icns:latest 
+  
+    env_file:
+      - ./config/api.env
+
+    networks:
+      network-app:
+        ipv4_address: 172.16.0.4
+    ports:
+      - 8080:80
+    depends_on:
+      - java_app
       - postgresql
   
 networks:
