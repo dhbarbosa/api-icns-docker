@@ -3,7 +3,7 @@ services:
   postgresql:
     image: diogohbarbosa/postgresql-icns:latest
     ports:
-      - 5432:5432
+      - 3030:5432
     env_file:
       - ./config/api.env
     
@@ -14,38 +14,47 @@ services:
 
   java_app:
     image: diogohbarbosa/api-icns:latest 
-  
     env_file:
       - ./config/api.env
-
     networks:
       network-app:
         ipv4_address: 172.16.0.3
     ports:
-      - 7070:8080
+      - 5050:80
     depends_on:
       - postgresql
 
   icns:
     image: diogohbarbosa/icns:latest 
-  
     env_file:
       - ./config/api.env
-
     networks:
       network-app:
         ipv4_address: 172.16.0.4
     ports:
-      - 8080:80
+      - 6060:80
     depends_on:
       - java_app
       - postgresql
   
+  # ubuntu:
+  #   image: diogohbarbosa/ubuntu:latest 
+  #   env_file:
+  #     - ./config/api.env
+  #   networks:
+  #     network-app:
+  #       ipv4_address: 172.16.0.5
+    
+  #   depends_on:
+  #     - java_app
+  #     - postgresql
+  #     - icns
+   
 networks:
   network-app:
     driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 172.16.0.0/16
+        - subnet: 172.16.0.0/24
 
