@@ -5,9 +5,9 @@
 A Criação do nosso projeto tem como intuito o aprendizado e desenvolvimento de um API feita em Java/Spring, ultizando ferramentas/bibliotecas como Docker, JWT, Bcrypt, Postgresql e outros.
 
 ### Ambiente
-
-Para isso devemos ter nossa máquina instalado docker e pgAdmin
-
+  PG Admin
+  Docker
+  
 ### Modo de Exec.
 
 -   Clonando o repositorio.
